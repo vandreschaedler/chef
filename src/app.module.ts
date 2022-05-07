@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { KnexModule } from 'nest-knexjs';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { IngredientsCategoriesModule } from './modules/ingredients-categories/ingredients-categories.module';
+import { IngredientsModule } from './modules/ingredients/ingredients.module';
 
 @Module({
   imports: [
@@ -18,8 +18,10 @@ import { AppService } from './app.service';
         },
       },
     }),
+    IngredientsCategoriesModule,
+    IngredientsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
